@@ -22,7 +22,7 @@ Prior to fine-tuning, the model is initialized with weights from [allenai/specte
 ![NLP taxonomy](https://github.com/sebischair/Exploring-NLP-Research/blob/main/figures/NLP-Taxonomy.jpg?raw=true)
 
 
-## How to use the pretrained model
+## How to use the fine-tuned model
 
 ```python
 from typing import List
