@@ -9,9 +9,9 @@ This is a fine-tuned BERT-based language model to classify NLP-related research 
 It is a multi-label classifier that can predict concepts from all levels of the NLP taxonomy. 
 If the model identifies a lower-level concept, it did learn to predict both the lower-level concept and its hypernyms in the NLP taxonomy.
 The model is fine-tuned on a weakly labeled dataset of 178,521 scientific papers from the ACL Anthology, the arXiv cs.CL domain, and Scopus.
-Prior to fine-tuning, the model is initialized with weights from [allenai/specter2](https://huggingface.co/allenai/specter2).
+Prior to fine-tuning, the model is initialized with weights from [allenai/specter2_base](https://huggingface.co/allenai/specter2_base).
 
-📄 Paper: [Exploring the Landscape of Natural Language Processing Research (RANLP 2023)](https://arxiv.org/abs/2307.10652).
+📄 Paper: [Exploring the Landscape of Natural Language Processing Research (RANLP 2023)](https://arxiv.org/abs/2307.10652)
 
 🤗 Hugging Face: [https://huggingface.co/TimSchopf/specter2_nlp_classifier](https://huggingface.co/TimSchopf/specter2_nlp_classifier)
 
