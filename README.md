@@ -15,6 +15,10 @@ Prior to fine-tuning, the model is initialized with weights from [allenai/specte
 
 🤗 Hugging Face: [https://huggingface.co/TimSchopf/specter2_nlp_classifier](https://huggingface.co/TimSchopf/specter2_nlp_classifier)
 
+💾 Data: [https://github.com/sebischair/Exploring-NLP-Research/blob/main/emnlp22_papers_with_nlp_taxonomy_labels.csv](https://github.com/sebischair/Exploring-NLP-Research/blob/main/emnlp22_papers_with_nlp_taxonomy_labels.csv)
+
+The dataset contains the titles and abstracts of all EMNLP 22 papers, which were manually labeled according to the NLP taxonomy.
+
 
 <a name="#nlp-taxonomy"/></a>
 ## NLP Taxonomy
