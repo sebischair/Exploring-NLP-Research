@@ -11,7 +11,7 @@ If the model identifies a lower-level concept, it did learn to predict both the 
 The model is fine-tuned on a weakly labeled dataset of 178,521 scientific papers from the ACL Anthology, the arXiv cs.CL domain, and Scopus.
 Prior to fine-tuning, the model is initialized with weights from [allenai/specter2_base](https://huggingface.co/allenai/specter2_base).
 
-📄 Paper: [Exploring the Landscape of Natural Language Processing Research (RANLP 2023)](https://arxiv.org/abs/2307.10652)
+📄 Paper: [Exploring the Landscape of Natural Language Processing Research (RANLP 2023)](https://aclanthology.org/2023.ranlp-1.111)
 
 🤗 Hugging Face: [https://huggingface.co/TimSchopf/specter2_nlp_classifier](https://huggingface.co/TimSchopf/specter2_nlp_classifier)
 
@@ -131,3 +131,24 @@ The model was evaluated on a manually labeled test set of 828 different EMNLP 20
 
 ## License
 BSD 3-Clause License
+
+## Citation information
+When citing our work in academic papers and theses, please use this BibTeX entry:
+``` 
+@inproceedings{schopf-etal-2023-exploring,
+    title = "Exploring the Landscape of Natural Language Processing Research",
+    author = "Schopf, Tim  and
+      Arabi, Karim  and
+      Matthes, Florian",
+    editor = "Mitkov, Ruslan  and
+      Angelova, Galia",
+    booktitle = "Proceedings of the 14th International Conference on Recent Advances in Natural Language Processing",
+    month = sep,
+    year = "2023",
+    address = "Varna, Bulgaria",
+    publisher = "INCOMA Ltd., Shoumen, Bulgaria",
+    url = "https://aclanthology.org/2023.ranlp-1.111",
+    pages = "1034--1045",
+    abstract = "As an efficient approach to understand, generate, and process natural language texts, research in natural language processing (NLP) has exhibited a rapid spread and wide adoption in recent years. Given the increasing research work in this area, several NLP-related approaches have been surveyed in the research community. However, a comprehensive study that categorizes established topics, identifies trends, and outlines areas for future research remains absent. Contributing to closing this gap, we have systematically classified and analyzed research papers in the ACL Anthology. As a result, we present a structured overview of the research landscape, provide a taxonomy of fields of study in NLP, analyze recent developments in NLP, summarize our findings, and highlight directions for future work.",
+}
+``` 
