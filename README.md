@@ -11,7 +11,7 @@ Prior to fine-tuning, the model is initialized with weights from [allenai/specte
 
 📄 Paper: [Exploring the Landscape of Natural Language Processing Research (RANLP 2023)](https://aclanthology.org/2023.ranlp-1.111).
 
-💻 Code: [https://github.com/sebischair/Exploring-NLP-Research](https://github.com/sebischair/Exploring-NLP-Research)
+🤗 Model: [https://huggingface.co/TimSchopf/nlp_taxonomy_classifier](https://huggingface.co/TimSchopf/nlp_taxonomy_classifier)
 
 💾 Data: [https://huggingface.co/datasets/TimSchopf/nlp_taxonomy_data](https://huggingface.co/datasets/TimSchopf/nlp_taxonomy_data)
 
