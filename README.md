@@ -1,7 +1,7 @@
 # Exploring-NLP-Research
 Repository of the RANLP 2023 paper "Exploring the Landscape of Natural Language Processing Research"
 
-# NLP Taxonomy Classifier
+## NLP Taxonomy Classifier
 
 This is a fine-tuned BERT-based language model to classify NLP-related research papers according to concepts included in the [NLP taxonomy](#nlp-taxonomy). 
 It is a multi-label classifier that can predict concepts from all levels of the NLP taxonomy. 
