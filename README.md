@@ -15,8 +15,6 @@ Prior to fine-tuning, the model is initialized with weights from [allenai/specte
 
 💾 Data: [https://huggingface.co/datasets/TimSchopf/nlp_taxonomy_data](https://huggingface.co/datasets/TimSchopf/nlp_taxonomy_data)
 
-The dataset contains the titles and abstracts of all EMNLP 22 papers, which were manually labeled according to the NLP taxonomy.
-
 <a name="#nlp-taxonomy"/></a>
 ## NLP Taxonomy
 
