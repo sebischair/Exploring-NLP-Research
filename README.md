@@ -9,7 +9,7 @@ If the model identifies a lower-level concept, it did learn to predict both the 
 The model is fine-tuned on a weakly labeled dataset of 178,521 scientific papers from the ACL Anthology, the arXiv cs.CL domain, and Scopus.
 Prior to fine-tuning, the model is initialized with weights from [allenai/specter2_base](https://huggingface.co/allenai/specter2_base).
 
-📄 Paper: [Exploring the Landscape of Natural Language Processing Research (RANLP 2023)](https://aclanthology.org/2023.ranlp-1.111).
+📄 Paper: [Exploring the Landscape of Natural Language Processing Research (RANLP 2023)](https://aclanthology.org/2023.ranlp-1.111)
 
 🤗 Model: [https://huggingface.co/TimSchopf/nlp_taxonomy_classifier](https://huggingface.co/TimSchopf/nlp_taxonomy_classifier)
 
