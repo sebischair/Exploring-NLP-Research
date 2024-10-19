@@ -20,7 +20,7 @@ Prior to fine-tuning, the model is initialized with weights from [allenai/specte
 
 ![NLP taxonomy](https://github.com/sebischair/Exploring-NLP-Research/blob/main/figures/NLP-Taxonomy.jpg?raw=true)
 
-The machine readable version of the NLP taxonomy is available in this repository as an OWL file: [https://github.com/sebischair/Exploring-NLP-Research/blob/main/NLP-Taxonomy.owl](https://github.com/sebischair/Exploring-NLP-Research/blob/main/NLP-Taxonomy.owl)
+A machine readable version of the NLP taxonomy is available in this repository as an OWL file: [https://github.com/sebischair/Exploring-NLP-Research/blob/main/NLP-Taxonomy.owl](https://github.com/sebischair/Exploring-NLP-Research/blob/main/NLP-Taxonomy.owl)
 
 For our work on [NLP-KG](https://aclanthology.org/2024.acl-demos.13), we extended this taxonomy to a large hierarchy of fields of study in NLP and made it available in a machine readable format as an OWL file at: [https://github.com/NLP-Knowledge-Graph/NLP-KG-WebApp](https://github.com/NLP-Knowledge-Graph/NLP-KG-WebApp)
 
