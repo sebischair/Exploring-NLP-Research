@@ -14,7 +14,7 @@
      xmlns:rikg-ontology="http://www.semanticweb.org/timschopf/rikg-ontology.owl#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl">
         <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tim Schopf</dcterms:creator>
-        <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A taxonomy for Natural Language Processing (NLP).
+        <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A taxonomy of fields of study in Natural Language Processing (NLP).
 
 This is the machine readable version of the NLP taxonomy developed in the paper &quot;Exploring the Landscape of Natural Language Processing Research (Schopf et al., RANLP 2023)&quot;, which is available at: https://aclanthology.org/2023.ranlp-1.111</dcterms:description>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NLP Taxonomy</dcterms:title>
