@@ -1,0 +1,1286 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/timschopf/nlp-kg.owl#"
+     xml:base="http://www.semanticweb.org/timschopf/nlp-kg.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:oboInOwl="http://www.semanticweb.org/timschopf/nlp-kg.owl#oboInOwl:"
+     xmlns:oboInOwl1="http://www.semanticweb.org/timschopf/rikg-ontology.owl#oboInOwl:"
+     xmlns:oboInOwl2="http://www.semanticweb.org/nlp-taxonomy.owl#oboInOwl:"
+     xmlns:nlp-taxonomy="http://www.semanticweb.org/nlp-taxonomy.owl#"
+     xmlns:rikg-ontology="http://www.semanticweb.org/timschopf/rikg-ontology.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl">
+        <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tim Schopf</dcterms:creator>
+        <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A taxonomy for Natural Language Processing (NLP).
+
+This is the machine readable version of the NLP taxonomy developed in the paper &quot;Exploring the Landscape of Natural Language Processing Research (Schopf et al., RANLP 2023)&quot;, which is available at: https://aclanthology.org/2023.ranlp-1.111</dcterms:description>
+        <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NLP Taxonomy</dcterms:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#oboInOwl:hasExactSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#oboInOwl:hasExactSynonym"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#subFieldOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#subFieldOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#superFieldOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <rdfs:comment xml:lang="en">The direct descendant of a Field of Study concept.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#superFieldOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#superFieldOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <rdfs:comment xml:lang="en">The direct ancestor of a Field of Study concept.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#level -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#level">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">The hierarchy level of the Field of Study concept</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#subFieldOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#superFieldOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Field of Study</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#ArgumentMining -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#ArgumentMining">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Reasoning"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Argument Mining is a subfield of Reasoning that concerned with automatically identifying and analyzing the structure of inference and reasoning expressed as arguments presented in a natural language text, such as a debate, an opinion article, or a legal case.</dcterms:description>
+        <rdfs:label xml:lang="en">Argument Mining</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Aspect-basedSentimentAnalysis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Aspect-basedSentimentAnalysis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SentimentAnalysis"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Aspect-based Sentiment Analysis is a subfield of Sentiment Analysis that is concerned with automatically identifying and analyzing the sentiment of a natural language text with respect to various aspects or facets, rather than considering the text as a whole.</dcterms:description>
+        <rdfs:label xml:lang="en">Aspect-based Sentiment Analysis</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Captioning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Captioning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextGeneration"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Captioning is a subfield of Text Generation that deals with the automatic generation of textual descriptions or captions for visual data, such as images and videos. This involves understanding the content of the visual data and generating a coherent and informative description that accurately reflects the visual information.</dcterms:description>
+        <rdfs:label xml:lang="en">Captioning</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Chunking -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Chunking">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Chunking is a subfield of Syntactic Text Processing that deals with the automatic identification and grouping of coherent sequences of words or other linguistic units that form grammatically meaningful units or phrases in a sentence.</dcterms:description>
+        <rdfs:label xml:lang="en">Chunking</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Code-Switching -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Code-Switching">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Multilinguality"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Code Switching is a subfield of Multilinguality that deals with switching between two or more languages or language varieties in a single conversation or text.</dcterms:description>
+        <rdfs:label xml:lang="en">Code-Switching</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#CodeGeneration -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#CodeGeneration">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextGeneration"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Code Generation is a subfield of Text Generation that deals with the automatic generation of executable code, such as a computer program, from multimodal inputs such as incomplete code, programs in another programming language, natural language descriptions, or execution examples.</dcterms:description>
+        <rdfs:label xml:lang="en">Code Generation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#CognitiveModeling -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#CognitiveModeling">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Linguistics&amp;CognitiveNLP"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Cognitive Modeling is a subfield of Linguistics &amp; Cognitive Natural Language Processing that is concerned with modeling and simulating human cognitive processes in various forms, especially in a computational or mathematical form. This includes analyzing the cognitive processes and mechanisms underlying natural language use and developing models and simulations that can capture and predict human behavior and performance on language-related tasks.</dcterms:description>
+        <rdfs:label xml:lang="en">Cognitive Modeling</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#CommonsenseReasoning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#CommonsenseReasoning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Reasoning"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Commonsense Reasoning is a subfield of Reasoning that is concerned with the development of algorithms and models for reasoning about everyday situations and concepts that are not explicitly stated in the text but require &quot;common sense&quot; or world knowledge and are commonly understood by humans. This world knowledge includes judgments about the nature of physical objects, taxonomic properties, or peoples&apos; intentions.</dcterms:description>
+        <rdfs:label xml:lang="en">Commonsense Reasoning</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#CoreferenceResolution -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#CoreferenceResolution">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationExtraction&amp;TextMining"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Coreference Resolution is a subfield of Information Extraction &amp; Text Mining that deals with identifying all expressions that refer to the same entity in a text. In other words, it is the task of determining which pronouns, nouns, or phrases in a text refer to the same person, place, thing, or concept.</dcterms:description>
+        <rdfs:label xml:lang="en">Coreference Resolution</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Cross-LingualTransfer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Cross-LingualTransfer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Multilinguality"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Cross-Lingual Transfer is a subfield of Multilinguality that deals with developing techniques and models for transferring knowledge learned from one language to solve tasks in another, commonly more low-resource, language.</dcterms:description>
+        <rdfs:label xml:lang="en">Cross-Lingual Transfer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Data-to-TextGeneration -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Data-to-TextGeneration">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextGeneration"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Data to Text Generation is a subfield of Text Generation that deals with the automatic generation of natural language text from structured or semi-structured data, such as tables, graphs or databases. The goal is to automatically create human-like and coherent textual summaries that convey the information contained in the structured data.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Data-to-Text</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Data-to-Text Generation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#DialogueResponseGeneration -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#DialogueResponseGeneration">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextGeneration"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Dialogue Response Generation is a subfield of Text Generation that deals with the automatic generation of natural language responses in a conversational setting, such as chatbots and virtual assistants. It requires understanding the natural language input and generating a coherent and appropriate response that follows the flow of the conversation, takes context into account, and adheres to social and cultural norms.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Dialog Response Generation</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Dialogue Generation</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Response Generation</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Dialogue Response Generation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#DocumentRetrieval -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#DocumentRetrieval">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationRetrieval"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Document Retrieval is a subfield of Information Retrieval that deals with finding and retrieving relevant documents from a large corpus of textual data in response to a user query. It involves developing algorithms and models that can analyze the query and the corpus and rank the documents based on their relevance and similarity to the query.</dcterms:description>
+        <rdfs:label xml:lang="en">Document Retrieval</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#EmotionAnalysis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#EmotionAnalysis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SentimentAnalysis"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Emotion Analysis is a subfield of Sentiment Analysis that deals with the automatic detection and analysis of emotions in natural language texts, such as joy, anger, fear, and sadness.</dcterms:description>
+        <rdfs:label xml:lang="en">Emotion Analysis</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#EthicalNLP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#EthicalNLP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Responsible&amp;TrustworthyNLP"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Ethical NLP is a subfield of Responsible NLP that deals with the ethical and social implications of developing and using natural language processing technologies. It involves developing algorithms and models that can handle issues such as fairness, bias, privacy, and transparency, and designing systems that promote ethical and responsible use of the technology.</dcterms:description>
+        <rdfs:label xml:lang="en">Ethical NLP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#EventExtraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#EventExtraction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationExtraction&amp;TextMining"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Event Extraction is a subfield of Information Extraction &amp; Text Mining that deals with identifying, extracting, and classifying events, such as accidents, elections, and natural disasters, from natural language text.</dcterms:description>
+        <rdfs:label xml:lang="en">Event Extraction</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Indexing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Indexing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationRetrieval"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Indexing is a subfield of Information Retrieval that deals with creating and maintaining indexes of textual data. The index provides a way to quickly locate and retrieve relevant documents or passages that contain a particular term or keyword.</dcterms:description>
+        <rdfs:label xml:lang="en">Indexing</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#InformationRetrieval -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#InformationRetrieval">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageProcessing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#DocumentRetrieval"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Indexing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#PassageRetrieval"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticSearch"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextClassification"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Information Retrieval is a subfield of Natural Language Processing (NLP) that focuses on the automatic retrieval of relevant information from large collections of unstructured textual data. It involves developing techniques and algorithms to search, retrieve, and present information in response to user queries. Information Retrieval is concerned with understanding the meaning of the user&apos;s query and matching it with relevant information in the collection, taking into account factors such as word meaning, word similarity, and relevance.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">IR</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Information Retrieval</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#IntentRecognition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#IntentRecognition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SentimentAnalysis"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Intent Recognition is a subfield of Sentiment Analysis that deals with the automatic identification and classification of the intentions or goals associated with natural language texts or utterances.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Intent Classification</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Intent Detection</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Intent Recognition</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#KnowledgeGraphReasoning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#KnowledgeGraphReasoning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Reasoning"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Knowledge Graph Reasoning is a subfield of Reasoning that deals with inferring new knowledge from existing entities, relationships, and concepts in knowledge graphs.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">KG Reasoning</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Knowledge Graph Reasoning</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#KnowledgeRepresentation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#KnowledgeRepresentation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Knowledge Representation is a subfield of Semantic Text Processing that deals with the representation, organization, and management of knowledge and information in a form that can be processed and used by computers in conjunction with natural language texts. It involves developing formal languages and frameworks, such as ontologies, semantic networks, and knowledge graphs, that can capture and represent the semantics, structure, and relations of concepts and entities in a domain-specific or general knowledge base.</dcterms:description>
+        <rdfs:label xml:lang="en">Knowledge Representation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#LanguageModels -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#LanguageModels">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Language Models are a subfield of Semantic Text Processing that deal with the probabilistic modeling and generation of natural language, based on a learned probability function of sequences of words. Language models generate probabilities by training on corpora of natural language texts and can be fine-tuned for a variety of different downstream tasks.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">LLM</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">LLMs</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">LM</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">LMs</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Language Models</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#LinguisticTheories -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#LinguisticTheories">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Linguistics&amp;CognitiveNLP"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Linguistic Theories is a subfield of Linguistics &amp; Cognitive Natural Language Processing that explores the nature of language and attempts to answer fundamental questions about what language is or what is the common basis of all languages. Additionally, the goal is also to provide a general theoretical framework that describes, explains, and predicts how language is used and processed.</dcterms:description>
+        <rdfs:label xml:lang="en">Linguistic Theories</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Low-ResourceNLP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Low-ResourceNLP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Responsible&amp;TrustworthyNLP"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Low-Resource NLP is a subfield of Responsible NLP which is concerned with the development of algorithms and models that work in resource-constrained environments, such as data scarcity and low-resource languages.</dcterms:description>
+        <rdfs:label xml:lang="en">Low-Resource NLP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#MachineReadingComprehension -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#MachineReadingComprehension">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Reasoning"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Machine Reading Comprehension is a subfield of Reasoning that deals with the task of automatically reading and understanding a piece of text and answering questions about it, as a human would. It involves developing algorithms and models that can handle the complexity and ambiguity of natural language, and reason about the implicit and explicit information in the text to infer the correct answer.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">MRC</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Machine Reading Comprehension</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#MachineTranslation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#MachineTranslation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Multilinguality"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextGeneration"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Machine Translation is a subfield of Multilinguality and Text Generation that deals with developing algorithms and models for automatically translating text or speech from one language to another. It involves analyzing the input text or speech, generating a representation of its meaning in the source language, and then producing a new text or speech in the target language that conveys the same meaning.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">MT</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Machine Translation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Morphology -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Morphology">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Morphology is a subfield of Syntactic Text Processing that deals with studying the structure and formation of word as well as their relationship to other words in the same language. It analyzes the structure of words and parts of words such as stems, root words, prefixes, and suffixes. Morphology also looks at parts of speech, intonation and stress, and the ways context can change a word&apos;s pronunciation and meaning.</dcterms:description>
+        <rdfs:label xml:lang="en">Morphology</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Multilinguality -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Multilinguality">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageProcessing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Code-Switching"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Cross-LingualTransfer"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#MachineTranslation"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Typology"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Multilinguality is a subfield of Natural Language Processing (NLP) that refers to the ability of machines to understand, process, and generate natural language text in multiple languages. Multilinguality is concerned with addressing the challenges that arise due to the linguistic and structural variations that exist across different languages. This includes variations in word order, syntax, grammar, or vocabulary.</dcterms:description>
+        <rdfs:label xml:lang="en">Multilinguality</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Multimodality -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Multimodality">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageProcessing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#ProgrammingLanguagesInNLP"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#StructuredDataInNLP"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#VisualDataInNLP"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Speech&amp;AudioInNLP"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Multimodality is a subfield of Natural Language Processing (NLP) that refers to the capability of a system or method to process input of different types or “modalities”, such as natural language text, speech, audio, images, video, and programming languages in NLP applications. It involves developing algorithms and models that can process and analyze information from multiple modalities, and integrate them to form a unified representation of the input.</dcterms:description>
+        <rdfs:label xml:lang="en">Multimodality</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#NamedEntityRecognition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#NamedEntityRecognition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationExtraction&amp;TextMining"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#RelationExtraction"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Named Entity Recognition is a subfield of Information Extraction &amp; Text Mining that deals with identifying, extracting and classifying named entities, such as people, organizations, and locations, in unstructured natural language texts.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Entity Chunking</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Entity Extraction</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Entity Identification</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">NER</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Named Entity Identification</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Named Entity Recognition</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageInterfaces -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageInterfaces">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageProcessing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#QuestionAnswering"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#DialogueSystems&amp;ConversationalAgents"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Natural Language Interfaces is a subfield of Natural Language Processing (NLP) that deals with the development of interfaces that enable humans to interact with computers using natural language. It involves developing algorithms and models that can understand and interpret human language and generate appropriate responses.</dcterms:description>
+        <rdfs:label xml:lang="en">Natural Language Interfaces</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageProcessing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageProcessing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationRetrieval"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Multilinguality"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Multimodality"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageInterfaces"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Reasoning"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticTextProcessing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SentimentAnalysis"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticTextProcessing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextGeneration"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationExtraction&amp;TextMining"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Linguistics&amp;CognitiveNLP"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Responsible&amp;TrustworthyNLP"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Natural language processing (NLP) is an interdisciplinary subfield of linguistics, computer science, and artificial intelligence concerned with the interactions between computers and human language, in particular how to program computers to process and analyze large amounts of natural language data. The goal is a computer capable of &apos;understanding&apos; the contents of documents, including the contextual nuances of the language within them. The technology can then accurately extract information and insights contained in the documents as well as categorize and organize the documents themselves.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">NLP</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">NLProc</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Natural Language Processing</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#NumericalReasoning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#NumericalReasoning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Reasoning"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Numerical Reasoning is a subfield of Reasoning that is concerned with understanding and processing numerical data. It involves performing arithmetic operations such as addition, subtraction, sorting, and counting.</dcterms:description>
+        <rdfs:label xml:lang="en">Numerical Reasoning</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#OpenInformationExtraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#OpenInformationExtraction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationExtraction&amp;TextMining"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Open Information Extraction is a subfield of Information Extraction &amp; Text Mining that deals with the extraction of structured factual information from natural language text, usually in the form of triples or n-ary propositions, without relying on predefined schemas or templates.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">OIE</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Open Information Extraction</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#OpinionMining -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#OpinionMining">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SentimentAnalysis"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Opinion Mining is a subfield of Sentiment Analysis that deals with the automatic extraction and analysis of opinions, attitudes, and positions regarding a particular topic expressed in natural language texts.</dcterms:description>
+        <rdfs:label xml:lang="en">Opinion Mining</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Paraphrasing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Paraphrasing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextGeneration"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Paraphrasing is a subfield of Text Generation that deals with the automatic generation of natural language text that expresses the same semantic meaning as a given input text, but using different words or syntactic structures. The goal of paraphrasing is to retain the original meaning while avoiding plagiarism, simplifying complex sentences, or adapting the language to a different audience.</dcterms:description>
+        <rdfs:label xml:lang="en">Paraphrasing</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#PassageRetrieval -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#PassageRetrieval">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationRetrieval"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Passage Retrieval is a subfield of Information Retrieval that deals with retrieving relevant passages or snippets of text from a larger document or corpus in response to a user query. It involves developing algorithms and models that can identify and extract the most relevant and informative passages, and rank them based on their relevance and similarity to the query.</dcterms:description>
+        <rdfs:label xml:lang="en">Passage Retrieval</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Phonetics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Phonetics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Phonetics is a subfield of Syntactic Text Processing that studies how humans produce and perceive sounds, or in the case of sign languages, the equivalent aspects of sign.</dcterms:description>
+        <rdfs:label xml:lang="en">Phonetics</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Phonology -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Phonology">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Phonology is a subfield of Syntactic Text Processing that studies the sound of languages or dialects and the patterns and rules that govern the use and combination of sounds to form meaningful units. It involves the analysis of phonemes, prosody, and intonation of speech, and the development of models and theories that can explain and predict the behavior and variability of sounds in different contexts.</dcterms:description>
+        <rdfs:label xml:lang="en">Phonology</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#PolarityAnalysis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#PolarityAnalysis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SentimentAnalysis"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Polarity Analysis is a subfield of Sentiment Analysis that deals with automatically detecting and classifying the polarity or valence of a given natural language text, such as positive, negative, or neutral.</dcterms:description>
+        <rdfs:label xml:lang="en">Polarity Analysis</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#ProgrammingLanguagesInNLP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#ProgrammingLanguagesInNLP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Multimodality"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Programming Languages in NLP is a subfield of Multimodality that deals with the processing of programming languages and code in conjunction with natural language texts.</dcterms:description>
+        <rdfs:label xml:lang="en">Programming Languages in NLP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Psycholinguistics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Psycholinguistics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Linguistics&amp;CognitiveNLP"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Psycholinguistics is a subfield of Linguistics &amp; Cognitive NLP  that studies the psychological and neural processes which enable humans to understand and use language.</dcterms:description>
+        <rdfs:label xml:lang="en">Psycholinguistics</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#QuestionAnswering -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#QuestionAnswering">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageInterfaces"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Question Answering is a subfield of Natural Language Interfaces that deals with the development of computer systems that can answer questions posed by humans in natural language. It involves the development of algorithms and models that can understand and interpret the meaning and intent of a question, retrieve relevant information from a knowledge base or document corpus, and generate a concise and accurate answer.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">QA</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Question Answering</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#QuestionGeneration -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#QuestionGeneration">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextGeneration"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Question Generation is a subfield of Text Generation that deals with the automatic generation of valid and fluent natural language questions based on given passages and target answers.</dcterms:description>
+        <rdfs:label xml:lang="en">Question Generation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Reasoning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Reasoning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageProcessing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#ArgumentMining"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#CommonsenseReasoning"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#KnowledgeGraphReasoning"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#MachineReadingComprehension"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NumericalReasoning"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextualInference"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Fact&amp;ClaimVerification"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Reasoning is a subfield of Natural Language Processing (NLP) that enables machines to draw logical conclusions and derive new knowledge from natural language texts based on the information available to them, using techniques such as deduction and induction.</dcterms:description>
+        <rdfs:label xml:lang="en">Reasoning</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#RelationExtraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#RelationExtraction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationExtraction&amp;TextMining"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Relation Extraction is a subfield of Information Extraction &amp; Text Mining that deals with identifying and extracting semantic relationships between entities mentioned in text. It involves identifying the relevant entities and the type of relationship that exists between them.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">RE</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Relation Extraction</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#RepresentationLearning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#RepresentationLearning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Representation Learning is a subfield of Semantic Text Processing that deals with the automatic learning and extraction of useful and compact representations of textual data, such as words, sentences, and documents, that can capture their semantic, syntactic, and pragmatic properties. It involves the development of algorithms and models that can transform natural language text into low-dimensional, dense, and informative vectors or embeddings that can be used in downstream tasks.</dcterms:description>
+        <rdfs:label xml:lang="en">Representation Learning</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#RobustnessInNLP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#RobustnessInNLP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Responsible&amp;TrustworthyNLP"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Robustness in NLP is a subfield of Responsible NLP that deals with developing algorithms and models that are insensitive to biases, resistant to data perturbations, and reliable for out-of-distribution predictions. Robust models can operate reliably and accurately even in the presence of biased, noisy or adversarial input, such as misspellings, grammatical errors, or intentional attacks.</dcterms:description>
+        <rdfs:label xml:lang="en">Robustness in NLP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#SemanticParsing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticParsing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Semantic Parsing is a subfield of Semantic Text Processing that deals with the problem of mapping the meaning of natural language expressions into formal representations, such as logical forms, knowledge graphs, or database queries. It involves developing algorithms and models that can parse and understand the syntax, semantics, and pragmatics of a sentence and generate a structured representation of its meaning.</dcterms:description>
+        <rdfs:label xml:lang="en">Semantic Parsing</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#SemanticSearch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticSearch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationRetrieval"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Semantic Search is a subfield of Semantic Text Processing and Information Retrieval that deals with the retrieval and ranking of information and documents based on their meaning and relevance to a user&apos;s query, rather than just matching keywords or phrases. It involves developing algorithms and models that can understand and analyze the semantic and pragmatic aspects of a query and a document, such as context, ambiguity, and intent, and generate a ranked list of relevant and diverse results.</dcterms:description>
+        <rdfs:label xml:lang="en">Semantic Search</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#SemanticSimilarity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticSimilarity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Semantic Similarity is a subfield of Semantic Text Processing that deals with the quantification and comparison of the semantic similarity or relatedness between two or more pieces of text, such as words, sentences, phrases, or documents. It includes metrics that estimate the distance or semantic relatedness of texts based on their meanings.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">STS</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Semantic Textual Similarity</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Semantic Similarity</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#SemanticTextProcessing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticTextProcessing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageProcessing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#KnowledgeRepresentation"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#LanguageModels"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#RepresentationLearning"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticParsing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticSearch"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticSimilarity"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextComplexity"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#WordSenseDisambiguation"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Discourse&amp;Pragmatics"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Semantic Text Processing is a subfield of Natural Language Processing (NLP) that attempts to derive meaning from natural language and helps machines interpret textual data semantically. It involves developing algorithms and models that can understand and represent the semantics of words and sentences, and the relationships between them.</dcterms:description>
+        <rdfs:label xml:lang="en">Semantic Text Processing</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#SentimentAnalysis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#SentimentAnalysis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageProcessing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Aspect-basedSentimentAnalysis"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#EmotionAnalysis"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#IntentRecognition"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#OpinionMining"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#PolarityAnalysis"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#StylisticAnalysis"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Sentiment Analysis is a subfield of Natural Language Processing (NLP) that deals with the identification, extraction and quantification of affective states and subjective information from textual data.</dcterms:description>
+        <rdfs:label xml:lang="en">Sentiment Analysis</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#SpeechRecognition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#SpeechRecognition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextGeneration"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Computer Speech Recognition</dcterms:description>
+        <dcterms:description xml:lang="en">STT</dcterms:description>
+        <dcterms:description xml:lang="en">Speech Recognition is a subfield of Text Generation that deals with the automatic recognition, translation and transcription of spoken language into text. It involves analyzing and processing audio input from speech signals and converting them into written text.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">ASR</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Automatic Speech Recognition</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Speech-to-Text</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Speech Recognition</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#StructuredDataInNLP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#StructuredDataInNLP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Multimodality"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Structured Data in NLP is a subfield of Multimodality that deals with the processing of structured data such as tables or graphs in conjunction with textual data. It involves the development of algorithms and models that can extract, represent, and use structured data in natural language form.</dcterms:description>
+        <rdfs:label xml:lang="en">Structured Data in NLP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#StylisticAnalysis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#StylisticAnalysis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SentimentAnalysis"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Stylistic Analysis is a subfield of Sentiment Analysis that deals with automatically analyzing the stylistic features and patterns in a given text, such as tone, mood, and writing style to extract the meaning or message contained in texts.</dcterms:description>
+        <rdfs:label xml:lang="en">Stylistic Analysis</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Summarization -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Summarization">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextGeneration"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationExtraction&amp;TextMining"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Text Summarization is a subfield of Information Extraction &amp; Text Mining and Text Generation that deals with the automatic generation of a concise and coherent summary of a longer text. It involves developing algorithms and models that can identify the most important information in a text and generate a summary that captures the essence of the original text.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Summarisation</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Summarization</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticParsing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticParsing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Syntactic Parsing is a subfield of Syntactic Text Processing that deals with automatically analyzing the syntactic structure of a sentence or text, and representing it in a formal or graphical form, such as a parse tree or dependency graph. It involves developing algorithms and models that can identify and classify the syntactic constituents, such as noun phrases and verb phrases, and their relationships in a sentence, and generate a structured representation of the sentence.</dcterms:description>
+        <rdfs:label xml:lang="en">Syntactic Parsing</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticTextProcessing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticTextProcessing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageProcessing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Chunking"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Morphology"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Phonetics"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Phonology"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticParsing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Tagging"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextErrorCorrection"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextNormalization"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextSegmentation"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Typology"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Syntactic Text Processing is a subfield of Natural Language Processing (NLP) that deals with the analysis of the syntax and grammatical structure of natural language texts.</dcterms:description>
+        <rdfs:label xml:lang="en">Syntactic Text Processing</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Tagging -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Tagging">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Tagging is a subfield of Syntactic Text Processing that deals with automatically assigning labels or tags to words or other units in a natural language texts, based on their grammatical or syntactic properties.</dcterms:description>
+        <rdfs:label xml:lang="en">Tagging</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#TermExtraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#TermExtraction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationExtraction&amp;TextMining"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Term Extraction is a subfield of Information Extraction &amp; Text Mining that deals with identifying and extracting relevant terms such as keywords or keyphrases from natural language texts.</dcterms:description>
+        <rdfs:label xml:lang="en">Term Extraction</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#TextClassification -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#TextClassification">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationRetrieval"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationExtraction&amp;TextMining"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Text Classification is a subfield of Information Retrieval and Information Extracrtion &amp; Text Mining that deals with automatically assigning a label or class to a natural language text. It involves the development of algorithms and models that can learn to recognize patterns in text and classify it into predefined categories.</dcterms:description>
+        <rdfs:label xml:lang="en">Text Classification</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#TextClustering -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#TextClustering">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationExtraction&amp;TextMining"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Text Clustering is a subfield of Information Extraction &amp; Text Mining that deals with grouping similar documents or sentences into clusters based on their content. The goal of text clustering is to discover patterns in large amounts of unstructured text data and identify groups of documents that share common themes, topics, or features.</dcterms:description>
+        <rdfs:label xml:lang="en">Text Clustering</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#TextComplexity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#TextComplexity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Text Complexity is a subfield of Semantic Text Processing that deals with the analysis and assessment of the difficulty, readability, and suitability of texts for different audiences and purposes. It can be assessed based on a series of factors such as the readability of the text, the levels of meaning or purpose in the text, the structure of the text, the conventionality and clarity of the language, and the knowledge demands of the text.</dcterms:description>
+        <rdfs:label xml:lang="en">Text Complexity</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#TextErrorCorrection -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#TextErrorCorrection">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Text Error Correction is a subfield of Syntactic Text Processing that deals with automatically detecting and correcting grammatical errors in a text, such as spelling mistakes, word choice errors, or syntax errors. It involves developing algorithms and models that can identify and diagnose the errors, generate corrected versions of the text, and evaluate the quality and accuracy of the corrections.</dcterms:description>
+        <rdfs:label xml:lang="en">Text Error Correction</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#TextGeneration -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#TextGeneration">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageProcessing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Captioning"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#CodeGeneration"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Data-to-TextGeneration"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#DialogueResponseGeneration"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#MachineTranslation"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Paraphrasing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#QuestionGeneration"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SpeechRecognition"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Summarization"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextStyleTransfer"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Text Generation is a subfield of Natural Language Processing (NLP) which attempts to teach machines to automatically generate texts that are indistinguishable from texts written by humans.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">NLG</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Natural Language Generation</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Text Generation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#TextNormalization -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#TextNormalization">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description>Text Normalization is a subfield of Syntactic Text Processing that deals with the process of transforming text into a single canonical form that it might not have had before. It reduces variations in word forms to a common form when the variations mean the same thing by converting word tokens to their base form.</dcterms:description>
+        <rdfs:label xml:lang="en">Text Normalization</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#TextSegmentation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#TextSegmentation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Text Segmentation is a subfield of Syntactic Text Processing that deals with automatically dividing a text into smaller segments or units that can be analyzed or processed separately. It involves developing algorithms and models that can identify and classify the structural or semantic boundaries between different sections or paragraphs in a text, and group them into meaningful and coherent segments.</dcterms:description>
+        <rdfs:label xml:lang="en">Text Segmentation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#TextStyleTransfer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#TextStyleTransfer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextGeneration"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Text Style Transfer is a subfield of Text Generation that deals with adapting and/or changing the stylistic manner in which a text is written, while preserving the semantic meaning of the original text.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">TST</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Text Style Transfer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#TextualInference -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#TextualInference">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Reasoning"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Textual Inference is a subfield of Reasoning that deals with the task of automatically determining whether a natural-language hypothesis can be inferred from a given premise, predicting their logical relationship, such as entailment, contradiction, or neutral.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">NLI</oboInOwl2:hasExactSynonym>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Natural Language Inference</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Textual Inference</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#TopicModeling -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#TopicModeling">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#InformationExtraction&amp;TextMining"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Topic Modeling is a subfield of Information Extraction &amp; Text Mining that deals with automatically discovering latent topics or themes in a large corpus of natural language text. It involves developing algorithms and models that can identify and extract the main themes or topics in the text, and cluster the documents based on their topic distribution.</dcterms:description>
+        <rdfs:label xml:lang="en">Topic Modeling</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Typology -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Typology">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Multilinguality"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SyntacticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Typology is a subfield of Syntactic Text Processing and Multilinguality that deals with studying the diversity and commonalities of the grammatical structures and patterns in different languages to allow their comparison. Its aim is to describe and explain the structural diversity and the common properties of the world&apos;s languages.</dcterms:description>
+        <rdfs:label xml:lang="en">Typology</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#VisualDataInNLP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#VisualDataInNLP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Multimodality"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Visual Data in NLP is a subfield of Multimodality that deals with the processing of visual data such as images or videos in conjunction with textual data.</dcterms:description>
+        <rdfs:label xml:lang="en">Visual Data in NLP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#WordSenseDisambiguation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#WordSenseDisambiguation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Word Sense Disambiguation is a subfield of Semantic Text Processing that deals with the problem of identifying the correct meaning or sense of a word in a given context, which can be ambiguous or polysemous. It involves developing algorithms and models that can analyze the syntactic and semantic features of a sentence and disambiguate the senses of the words in it, based on their co-occurrence patterns, collocations, and relations with other words.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">WSD</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Word Sense Disambiguation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#DialogueSystems&amp;ConversationalAgents -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#DialogueSystems&amp;ConversationalAgents">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageInterfaces"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Dialogue Systems &amp; Conversational Agents is a subfield of Natural Language Interfaces that deals with the development of computer systems that can interact with humans in natural language. It involves the development of algorithms and models that can understand and generate natural language responses based on contextual cues, user preferences, and conversational goals.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">Dialog Systems &amp; Conversational Agents</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Dialogue Systems &amp; Conversational Agents</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Discourse&amp;Pragmatics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Discourse&amp;Pragmatics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#SemanticTextProcessing"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Discourse &amp; Pragmatics is a subfield of Semantic Text Processing that deals with the analysis and understanding of language use in context, beyond the surface-level meaning of individual words or sentences. Discourse Analysis focuses on the organization and structure of text and conversation, and how they convey coherence, cohesion, and discourse relations, such as topic shifts, references, and implicatures. Pragmatics focuses on the study of language use in social and communicative situations, and how speakers and listeners use context, knowledge, and inference to convey meaning and achieve their communicative goals.</dcterms:description>
+        <rdfs:label xml:lang="en">Discourse &amp; Pragmatics</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Explainability&amp;InterpretabilityInNLP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Explainability&amp;InterpretabilityInNLP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Responsible&amp;TrustworthyNLP"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Explainability &amp; Interpretability in NLP is a subfield of Responsible NLP that deals with developing algorithms and models that can provide transparent and interpretable predictions, and explain the reasoning and decision-making processes behind them. It involves developing techniques that can generate human-readable explanations, highlight important features and patterns, and enable users to interact and refine the models.</dcterms:description>
+        <rdfs:label xml:lang="en">Explainability &amp; Interpretability in NLP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Fact&amp;ClaimVerification -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Fact&amp;ClaimVerification">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Reasoning"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Fact &amp; Claim Verification is a subfield of Reasoning that deals with the task of automatically verifying the veracity of facts or claims in natural language text, by comparing them against a knowledge base or external sources of information. It involves developing algorithms and models that can analyze the text and identify the relevant facts and evidence, and reason about the likelihood of the facts or claims being true or false.</dcterms:description>
+        <rdfs:label xml:lang="en">Fact &amp; Claim Verification</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Green&amp;SustainableNLP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Green&amp;SustainableNLP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Responsible&amp;TrustworthyNLP"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Green &amp; Sustainable NLP is a subfield of Responsible NLP is focused on efficient and sustainable approaches for text processing, with minimal environmental impact. Efficient NLP models can optimize energy consumption, reduce the carbon footprint, and recycle and reuse resources.</dcterms:description>
+        <rdfs:label xml:lang="en">Green &amp; Sustainable NLP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#InformationExtraction&amp;TextMining -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#InformationExtraction&amp;TextMining">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageProcessing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#CoreferenceResolution"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#EventExtraction"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NamedEntityRecognition"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#OpenInformationExtraction"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#RelationExtraction"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Summarization"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TermExtraction"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextClassification"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TextClustering"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#TopicModeling"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Information Extraction &amp; Text Mining is a subfield of Natural Language Processing (NLP) that focuses on automatically extracting structured information and knowledge from unstructured textual data.</dcterms:description>
+        <oboInOwl2:hasExactSynonym xml:lang="en">IE</oboInOwl2:hasExactSynonym>
+        <rdfs:label xml:lang="en">Information Extraction &amp; Text Mining</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Linguistics&amp;CognitiveNLP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Linguistics&amp;CognitiveNLP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageProcessing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#CognitiveModeling"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#LinguisticTheories"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Psycholinguistics"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Linguistics &amp; Cognitive Natural Language Processing is a subfield of Natural Language Processing (NLP) that focuses on the study of natural language from a linguistic and cognitive perspective. It studies natural language based on the assumptions that our linguistic abilities are firmly rooted in our cognitive abilities, that meaning is essentially conceptualization, and that grammar is shaped by usage.</dcterms:description>
+        <rdfs:label xml:lang="en">Linguistics &amp; Cognitive NLP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Responsible&amp;TrustworthyNLP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Responsible&amp;TrustworthyNLP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#NaturalLanguageProcessing"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#EthicalNLP"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Low-ResourceNLP"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#RobustnessInNLP"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Explainability&amp;InterpretabilityInNLP"/>
+        <nlp-taxonomy:superFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Green&amp;SustainableNLP"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Responsible &amp; Trustworthy NLP is a subfield of Natural Language Processing (NLP) that is concerned with implementing methods that focus on fairness, transparency, trustworthiness, explainability, accountability, and ethical aspects at its core. It involves considering the societal impact of NLP applications and ensuring that they do not perpetuate or amplify biases or discrimination. Additionally, responsible NLP also involves developing methods to ensure the privacy and security of user data, and to mitigate the risks of unintended consequences or misuse of NLP systems.</dcterms:description>
+        <rdfs:label xml:lang="en">Responsible &amp; Trustworthy NLP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nlp-taxonomy.owl#Speech&amp;AudioInNLP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nlp-taxonomy.owl#Speech&amp;AudioInNLP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#FieldOfStudy"/>
+        <nlp-taxonomy:subFieldOf rdf:resource="http://www.semanticweb.org/nlp-taxonomy.owl#Multimodality"/>
+        <nlp-taxonomy:level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nlp-taxonomy:level>
+        <dcterms:description xml:lang="en">Speech &amp; Audio in NLP is a subfield of Multimodality that deals with the processing of spoken language and audio data in conjunction with textual data. It involves developing algorithms and models that can recognize and transcribe speech and audio, understand and interpret their meaning, and generate natural language responses.</dcterms:description>
+        <rdfs:label xml:lang="en">Speech &amp; Audio in NLP</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
